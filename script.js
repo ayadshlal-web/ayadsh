@@ -1,7 +1,9 @@
-function showTime() {
-	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+herefunction showTime() {
+  const el = document.getElementById('currentTime');
+  if (!el) return;
+  const now = new Date().toLocaleString('ar-IQ', { timeZone: 'Asia/Baghdad' });
+  el.textContent = now;
 }
+
+setInterval(showTime, 1000);
 showTime();
-setInterval(function () {
-	showTime();
-}, 1000);
